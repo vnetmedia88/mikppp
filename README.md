@@ -89,11 +89,20 @@ Ganti `<IP-VPS>` dengan alamat IP publik VPS kamu.
 
 ---
 
-## 🎉 Selesai
-
 Mikhmon siap digunakan dari container Docker.  
 Untuk login default, username: `admin`, password: `admin`.
 
 ---
+
+
+## 🎉 kalau mau buat lg 
+cp -r mikppp paijo
+
+cd /root/paijo
+
+docker build -t paijo .
+
+docker run -d --name paijo-container -p 1002:80 -v $(pwd):/var/www/html paijo
+
 
 © 2025 vnetmedia88
