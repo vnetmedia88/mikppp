@@ -1,6 +1,6 @@
 # 🚀 Deploy Mikhmon v3 via Docker
 
-Panduan lengkap untuk menginstall dan menjalankan Mikhmon v3 menggunakan Docker. Cocok untuk pemula dan praktis untuk VPS / STB UBUNTU/ CASA OS!
+Panduan lengkap untuk menginstall dan menjalankan Mikhmon v3 menggunakan Docker. Cocok untuk pemula dan praktis untuk VPS / STB UBUNTU!
 
 ---
 
@@ -21,58 +21,34 @@ cd mikppp
 
 ---
 
-## 🛠️ 3. Buat Dockerfile
+## 🛠️ 3. Buat folder docker manual di var/www/html/namafolder ( saya contoh pkai royhan)
 
 ```bash
-nano Dockerfile
-```
-
-Isi file `Dockerfile` dengan:
-
-```Dockerfile
-FROM php:7.4-apache
-RUN a2enmod rewrite
-COPY . /var/www/html/
-EXPOSE 80
-CMD ["apache2-foreground"]
-```
-
-Simpan: tekan `CTRL+O`, ENTER, lalu `CTRL+X`.
-
----
-
-## 🧱 4. Build Docker Image
-
-```bash
-docker build -t mikppp .
+mkdir -p /var/www/html/royhan
 ```
 
 ---
 
-## 🚀 5. Jalankan Container
-
+## ⬇️ 2. Clone fille dari root
 ```bash
-docker run -d -p 1001:80 \
-  -v $(pwd):/var/www/html \
-  --name mikppp-container \
-  mikppp
+cp -r /root/mikppp/* /var/www/html/royhan/
 ```
 
 ---
 
-## 🔐 6. Atur Izin Akses Folder
-
+## ⬇️ 3. buat nama container,port baru
 ```bash
-sudo chown -R www-data:www-data $(pwd)
-sudo chmod -R 755 $(pwd)
+docker run -d --name royhan -p 1001:80 -v /var/www/html/royhan:/var/www/html php:7.4-apache
 ```
 
 ---
 
-## ✅ 7. Cek Container
+## 🔐 6. Atur Izin Akses Folder mikhmon
 
 ```bash
-docker ps
+chown -R www-data:www-data /var/www/html/royhan
+chmod -R 755 /var/www/html/royhan
+chmod -R 777 /var/www/html/royhan
 ```
 
 ---
@@ -90,19 +66,13 @@ Ganti `<IP-VPS>` dengan alamat IP publik VPS kamu.
 ---
 
 Mikhmon siap digunakan dari container Docker.  
-Untuk login default, username: `admin`, password: `admin`.
+Untuk login default, username: `mikhmon`, password: `1234`.
 
 ---
 
 
-## 🎉 kalau mau buat lg 
-cp -r mikppp paijo
-
-cd /root/paijo
-
-docker build -t paijo .
-
-docker run -d --name paijo-container -p 1002:80 -v $(pwd):/var/www/html paijo
-
 
 © 2025 vnetmedia88
+
+
+
