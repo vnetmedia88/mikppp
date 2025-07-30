@@ -7,21 +7,21 @@ Panduan lengkap untuk membuat lagi
 ## 📦 1. buat folder baru
 
 ```bash
-mkdir -p /var/www/html/royhan
+mkdir -p /var/www/html/paijo
 ```
 
 ---
 
 ## ⬇️ 2. Clone fille dari root
 ```bash
-cp -r /root/mikppp/* /var/www/html/royhan/
+cp -r /root/mikppp/* /var/www/html/paijo/
 ```
 
 ---
 
 ## ⬇️ 3. buat nama container,port baru
 ```bash
-docker run -d --name royhan -p 1002:80 -v /var/www/html/royhan:/var/www/html php:7.4-apache
+docker run -d --name paijo -p 1002:80 -v /var/www/html/paijo:/var/www/html php:7.4-apache
 ```
 
 ---
