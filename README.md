@@ -1,6 +1,6 @@
 # 🚀 Deploy Mikhmon v3 via Docker
 
-Panduan lengkap untuk menginstall dan menjalankan Mikhmon v3 menggunakan Docker. Cocok untuk pemula dan praktis untuk VPS / STB UBUNTU!
+Panduan lengkap untuk menginstall dan menjalankan Mikhmon v3 support ppp menggunakan Docker. Cocok untuk pemula dan praktis untuk VPS / STB UBUNTU!
 
 ---
 
